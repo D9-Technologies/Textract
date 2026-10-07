@@ -1,8 +1,8 @@
 <?php
 
-namespace ZingStudios\Textract\Factory\Geometry;
+namespace D9\Textract\Factory\Geometry;
 
-use ZingStudios\Textract\Model\Geometry\Geometry;
+use D9\Textract\Model\Geometry\Geometry;
 
 class GeometryFactory implements GeometryFactoryInterface
 {

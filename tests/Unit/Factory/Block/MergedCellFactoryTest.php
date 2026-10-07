@@ -1,16 +1,16 @@
 <?php
 
-namespace ZingStudios\Textract\Tests\Unit\Factory\Block;
+namespace D9\Textract\Tests\Unit\Factory\Block;
 
 use Faker\Factory;
-use ZingStudios\Textract\Factory\Block\MergedCellFactory;
-use ZingStudios\Textract\Factory\Geometry\GeometryFactoryInterface;
-use ZingStudios\Textract\Model\Geometry\Geometry;
-use ZingStudios\Textract\Tests\AbstractBaseTest;
+use D9\Textract\Factory\Block\MergedCellFactory;
+use D9\Textract\Factory\Geometry\GeometryFactoryInterface;
+use D9\Textract\Model\Geometry\Geometry;
+use D9\Textract\Tests\AbstractBaseTest;
 
 /**
- * @covers \ZingStudios\Textract\Factory\Block\MergedCellFactory
- * @covers \ZingStudios\Textract\Factory\Block\AbstractBlockFactory
+ * @covers \D9\Textract\Factory\Block\MergedCellFactory
+ * @covers \D9\Textract\Factory\Block\AbstractBlockFactory
  */
 class MergedCellFactoryTest extends AbstractBaseTest
 {

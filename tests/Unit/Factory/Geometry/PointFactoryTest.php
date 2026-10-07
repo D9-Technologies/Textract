@@ -1,13 +1,13 @@
 <?php
 
-namespace ZingStudios\Textract\Tests\Unit\Factory\Geometry;
+namespace D9\Textract\Tests\Unit\Factory\Geometry;
 
 use Faker\Factory;
 use PHPUnit\Framework\TestCase;
-use ZingStudios\Textract\Factory\Geometry\PointFactory;
+use D9\Textract\Factory\Geometry\PointFactory;
 
 /**
- * @covers \ZingStudios\Textract\Factory\Geometry\PointFactory
+ * @covers \D9\Textract\Factory\Geometry\PointFactory
  */
 class PointFactoryTest extends TestCase
 {

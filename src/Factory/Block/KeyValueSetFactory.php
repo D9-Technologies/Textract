@@ -1,9 +1,9 @@
 <?php
 
-namespace ZingStudios\Textract\Factory\Block;
+namespace D9\Textract\Factory\Block;
 
-use ZingStudios\Textract\Model\Block\EntityType;
-use ZingStudios\Textract\Model\Block\KeyValueSet;
+use D9\Textract\Model\Block\EntityType;
+use D9\Textract\Model\Block\KeyValueSet;
 
 class KeyValueSetFactory extends AbstractBlockFactory implements KeyValueSetFactoryInterface
 {

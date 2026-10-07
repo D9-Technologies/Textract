@@ -1,16 +1,16 @@
 <?php
 
-namespace ZingStudios\Textract\Tests\Unit\Model\Block;
+namespace D9\Textract\Tests\Unit\Model\Block;
 
 use Faker\Factory;
-use ZingStudios\Textract\Model\Block\BlockType;
-use ZingStudios\Textract\Model\Block\Cell;
-use ZingStudios\Textract\Model\Block\RelationshipType;
-use ZingStudios\Textract\Model\Geometry\Geometry;
+use D9\Textract\Model\Block\BlockType;
+use D9\Textract\Model\Block\Cell;
+use D9\Textract\Model\Block\RelationshipType;
+use D9\Textract\Model\Geometry\Geometry;
 
 /**
- * @covers \ZingStudios\Textract\Model\Block\Cell
- * @covers \ZingStudios\Textract\Model\Block\AbstractBlock
+ * @covers \D9\Textract\Model\Block\Cell
+ * @covers \D9\Textract\Model\Block\AbstractBlock
  */
 class CellTest extends AbstractBlockTest
 {

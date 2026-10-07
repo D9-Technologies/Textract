@@ -1,23 +1,23 @@
 <?php
 
-namespace ZingStudios\Textract\Tests\Integration\Builder;
+namespace D9\Textract\Tests\Integration\Builder;
 
 use Faker\Factory;
 use PHPUnit\Framework\TestCase;
-use ZingStudios\Textract\Builder\BlockBuilderInterface;
-use ZingStudios\Textract\Builder\DocumentBuilder;
-use ZingStudios\Textract\Model\Block\BlockType;
-use ZingStudios\Textract\Model\Block\Page;
-use ZingStudios\Textract\Model\Block\RelationshipType;
-use ZingStudios\Textract\Model\Block\Word;
-use ZingStudios\Textract\Model\Document;
-use ZingStudios\Textract\Model\Geometry\BoundingBox;
-use ZingStudios\Textract\Model\Geometry\Geometry;
-use ZingStudios\Textract\Model\Geometry\Point;
-use ZingStudios\Textract\Model\Geometry\Polygon;
+use D9\Textract\Builder\BlockBuilderInterface;
+use D9\Textract\Builder\DocumentBuilder;
+use D9\Textract\Model\Block\BlockType;
+use D9\Textract\Model\Block\Page;
+use D9\Textract\Model\Block\RelationshipType;
+use D9\Textract\Model\Block\Word;
+use D9\Textract\Model\Document;
+use D9\Textract\Model\Geometry\BoundingBox;
+use D9\Textract\Model\Geometry\Geometry;
+use D9\Textract\Model\Geometry\Point;
+use D9\Textract\Model\Geometry\Polygon;
 
 /**
- * @covers \ZingStudios\Textract\Builder\DocumentBuilder
+ * @covers \D9\Textract\Builder\DocumentBuilder
  */
 class DocumentBuilderTest extends TestCase
 {

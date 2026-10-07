@@ -1,10 +1,10 @@
 <?php
 
-namespace ZingStudios\Textract\Tests\Unit\Model\Block;
+namespace D9\Textract\Tests\Unit\Model\Block;
 
 use PHPUnit\Framework\TestCase;
-use ZingStudios\Textract\Model\Block\BlockInterface;
-use ZingStudios\Textract\Model\Block\RelationshipType;
+use D9\Textract\Model\Block\BlockInterface;
+use D9\Textract\Model\Block\RelationshipType;
 
 abstract class AbstractBlockTest extends TestCase
 {

@@ -1,21 +1,21 @@
 <?php
 
-namespace ZingStudios\Textract\Tests\Unit\Factory\Geometry;
+namespace D9\Textract\Tests\Unit\Factory\Geometry;
 
 use Faker\Factory;
 use PHPUnit\Framework\TestCase;
-use ZingStudios\Textract\Factory\Geometry\BoundingBoxFactoryInterface;
-use ZingStudios\Textract\Factory\Geometry\GeometryFactory;
-use ZingStudios\Textract\Factory\Geometry\PointFactory;
-use ZingStudios\Textract\Factory\Geometry\PointFactoryInterface;
-use ZingStudios\Textract\Factory\Geometry\PolygonFactory;
-use ZingStudios\Textract\Factory\Geometry\PolygonFactoryInterface;
-use ZingStudios\Textract\Model\Geometry\BoundingBox;
-use ZingStudios\Textract\Model\Geometry\Point;
-use ZingStudios\Textract\Model\Geometry\Polygon;
+use D9\Textract\Factory\Geometry\BoundingBoxFactoryInterface;
+use D9\Textract\Factory\Geometry\GeometryFactory;
+use D9\Textract\Factory\Geometry\PointFactory;
+use D9\Textract\Factory\Geometry\PointFactoryInterface;
+use D9\Textract\Factory\Geometry\PolygonFactory;
+use D9\Textract\Factory\Geometry\PolygonFactoryInterface;
+use D9\Textract\Model\Geometry\BoundingBox;
+use D9\Textract\Model\Geometry\Point;
+use D9\Textract\Model\Geometry\Polygon;
 
 /**
- * @covers \ZingStudios\Textract\Factory\Geometry\GeometryFactory
+ * @covers \D9\Textract\Factory\Geometry\GeometryFactory
  */
 class GeometryFactoryTest extends TestCase
 {

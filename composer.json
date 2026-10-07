@@ -1,21 +1,21 @@
 {
-    "name": "zing-studios/textract",
+    "name": "d9-technologies/textract",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "James Haynes",
-            "email": "james@zingstudios.com"
+            "name": "Ethan",
+            "email": "eelshyeb@d9now.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "ZingStudios\\Textract\\": "src/"
+            "D9\\Textract\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ZingStudios\\Textract\\Tests\\": "tests/"
+            "D9\\Textract\\Tests\\": "tests/"
         }
     },
     "require": {

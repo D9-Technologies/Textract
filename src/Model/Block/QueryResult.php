@@ -1,8 +1,8 @@
 <?php
 
-namespace ZingStudios\Textract\Model\Block;
+namespace D9\Textract\Model\Block;
 
-use ZingStudios\Textract\Model\Geometry\Geometry;
+use D9\Textract\Model\Geometry\Geometry;
 
 class QueryResult extends AbstractBlock implements HasTextInterface
 {

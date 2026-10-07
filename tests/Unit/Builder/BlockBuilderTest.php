@@ -1,33 +1,33 @@
 <?php
 
-namespace ZingStudios\Textract\Tests\Unit\Builder;
+namespace D9\Textract\Tests\Unit\Builder;
 
 use Faker\Factory;
 use PHPUnit\Framework\TestCase;
-use ZingStudios\Textract\Builder\BlockBuilder;
-use ZingStudios\Textract\Factory\Block\BlockFactoryInterface;
-use ZingStudios\Textract\Factory\Block\CellFactoryInterface;
-use ZingStudios\Textract\Factory\Geometry\GeometryFactoryInterface;
-use ZingStudios\Textract\Model\Block\BlockInterface;
-use ZingStudios\Textract\Model\Block\BlockType;
-use ZingStudios\Textract\Model\Block\Cell;
-use ZingStudios\Textract\Model\Block\EntityType;
-use ZingStudios\Textract\Model\Block\KeyValueSet;
-use ZingStudios\Textract\Model\Block\Line;
-use ZingStudios\Textract\Model\Block\MergedCell;
-use ZingStudios\Textract\Model\Block\Page;
-use ZingStudios\Textract\Model\Block\Query;
-use ZingStudios\Textract\Model\Block\QueryResult;
-use ZingStudios\Textract\Model\Block\SelectionElement;
-use ZingStudios\Textract\Model\Block\SelectionStatus;
-use ZingStudios\Textract\Model\Block\Signature;
-use ZingStudios\Textract\Model\Block\Table;
-use ZingStudios\Textract\Model\Block\Word;
-use ZingStudios\Textract\Model\Geometry\Geometry;
-use ZingStudios\Textract\Tests\AbstractBaseTest;
+use D9\Textract\Builder\BlockBuilder;
+use D9\Textract\Factory\Block\BlockFactoryInterface;
+use D9\Textract\Factory\Block\CellFactoryInterface;
+use D9\Textract\Factory\Geometry\GeometryFactoryInterface;
+use D9\Textract\Model\Block\BlockInterface;
+use D9\Textract\Model\Block\BlockType;
+use D9\Textract\Model\Block\Cell;
+use D9\Textract\Model\Block\EntityType;
+use D9\Textract\Model\Block\KeyValueSet;
+use D9\Textract\Model\Block\Line;
+use D9\Textract\Model\Block\MergedCell;
+use D9\Textract\Model\Block\Page;
+use D9\Textract\Model\Block\Query;
+use D9\Textract\Model\Block\QueryResult;
+use D9\Textract\Model\Block\SelectionElement;
+use D9\Textract\Model\Block\SelectionStatus;
+use D9\Textract\Model\Block\Signature;
+use D9\Textract\Model\Block\Table;
+use D9\Textract\Model\Block\Word;
+use D9\Textract\Model\Geometry\Geometry;
+use D9\Textract\Tests\AbstractBaseTest;
 
 /**
- * @covers \ZingStudios\Textract\Builder\BlockBuilder
+ * @covers \D9\Textract\Builder\BlockBuilder
  */
 class BlockBuilderTest extends AbstractBaseTest
 {

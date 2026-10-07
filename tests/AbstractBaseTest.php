@@ -1,6 +1,6 @@
 <?php
 
-namespace ZingStudios\Textract\Tests;
+namespace D9\Textract\Tests;
 
 use Faker\Factory;
 use PHPUnit\Framework\TestCase;

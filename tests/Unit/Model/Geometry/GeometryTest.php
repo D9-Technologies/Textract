@@ -1,15 +1,15 @@
 <?php
 
-namespace ZingStudios\Textract\Tests\Unit\Model\Geometry;
+namespace D9\Textract\Tests\Unit\Model\Geometry;
 
 use Faker\Factory;
 use PHPUnit\Framework\TestCase;
-use ZingStudios\Textract\Model\Geometry\BoundingBox;
-use ZingStudios\Textract\Model\Geometry\Geometry;
-use ZingStudios\Textract\Model\Geometry\Polygon;
+use D9\Textract\Model\Geometry\BoundingBox;
+use D9\Textract\Model\Geometry\Geometry;
+use D9\Textract\Model\Geometry\Polygon;
 
 /**
- * @covers \ZingStudios\Textract\Model\Geometry\Geometry
+ * @covers \D9\Textract\Model\Geometry\Geometry
  */
 class GeometryTest extends TestCase
 {

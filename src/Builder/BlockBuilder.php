@@ -1,26 +1,26 @@
 <?php
 
-namespace ZingStudios\Textract\Builder;
+namespace D9\Textract\Builder;
 
-use ZingStudios\Textract\Factory\Block\AbstractBlockFactory;
-use ZingStudios\Textract\Factory\Block\BlockFactoryInterface;
-use ZingStudios\Textract\Factory\Block\CellFactory;
-use ZingStudios\Textract\Factory\Block\KeyValueSetFactory;
-use ZingStudios\Textract\Factory\Block\LineFactory;
-use ZingStudios\Textract\Factory\Block\MergedCellFactory;
-use ZingStudios\Textract\Factory\Block\PageFactory;
-use ZingStudios\Textract\Factory\Block\QueryFactory;
-use ZingStudios\Textract\Factory\Block\QueryResultFactory;
-use ZingStudios\Textract\Factory\Block\SelectionElementFactory;
-use ZingStudios\Textract\Factory\Block\SignatureFactory;
-use ZingStudios\Textract\Factory\Block\TableFactory;
-use ZingStudios\Textract\Factory\Block\TableFooterFactory;
-use ZingStudios\Textract\Factory\Block\TableTitleFactory;
-use ZingStudios\Textract\Factory\Block\WordFactory;
-use ZingStudios\Textract\Factory\Geometry\GeometryFactory;
-use ZingStudios\Textract\Factory\Geometry\GeometryFactoryInterface;
-use ZingStudios\Textract\Model\Block\BlockInterface;
-use ZingStudios\Textract\Model\Block\BlockType;
+use D9\Textract\Factory\Block\AbstractBlockFactory;
+use D9\Textract\Factory\Block\BlockFactoryInterface;
+use D9\Textract\Factory\Block\CellFactory;
+use D9\Textract\Factory\Block\KeyValueSetFactory;
+use D9\Textract\Factory\Block\LineFactory;
+use D9\Textract\Factory\Block\MergedCellFactory;
+use D9\Textract\Factory\Block\PageFactory;
+use D9\Textract\Factory\Block\QueryFactory;
+use D9\Textract\Factory\Block\QueryResultFactory;
+use D9\Textract\Factory\Block\SelectionElementFactory;
+use D9\Textract\Factory\Block\SignatureFactory;
+use D9\Textract\Factory\Block\TableFactory;
+use D9\Textract\Factory\Block\TableFooterFactory;
+use D9\Textract\Factory\Block\TableTitleFactory;
+use D9\Textract\Factory\Block\WordFactory;
+use D9\Textract\Factory\Geometry\GeometryFactory;
+use D9\Textract\Factory\Geometry\GeometryFactoryInterface;
+use D9\Textract\Model\Block\BlockInterface;
+use D9\Textract\Model\Block\BlockType;
 
 class BlockBuilder implements BlockBuilderInterface
 {

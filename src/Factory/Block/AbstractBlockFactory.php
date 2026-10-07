@@ -1,10 +1,10 @@
 <?php
 
-namespace ZingStudios\Textract\Factory\Block;
+namespace D9\Textract\Factory\Block;
 
-use ZingStudios\Textract\Factory\Geometry\GeometryFactory;
-use ZingStudios\Textract\Factory\Geometry\GeometryFactoryInterface;
-use ZingStudios\Textract\Model\Block\BlockInterface;
+use D9\Textract\Factory\Geometry\GeometryFactory;
+use D9\Textract\Factory\Geometry\GeometryFactoryInterface;
+use D9\Textract\Model\Block\BlockInterface;
 
 abstract class AbstractBlockFactory implements BlockFactoryInterface
 {
