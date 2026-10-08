@@ -18,13 +18,13 @@ use D9\Textract\Model\Geometry\BoundingBox;
 use D9\Textract\Model\Geometry\Geometry;
 use D9\Textract\Model\Geometry\Point;
 use D9\Textract\Model\Geometry\Polygon;
-use D9\Textract\Tests\AbstractBaseTest;
+use D9\Textract\Tests\AbstractTestCase;
 
 /**
  * @covers \D9\Textract\Factory\Block\KeyValueSetFactory
  * @covers \D9\Textract\Factory\Block\AbstractBlockFactory
  */
-class KeyValueSetFactoryTest extends AbstractBaseTest
+class KeyValueSetFactoryTest extends AbstractTestCase
 {
     /**
      * @param EntityType $entityType
@@ -67,7 +67,7 @@ class KeyValueSetFactoryTest extends AbstractBaseTest
         $this->assertEquals($entityType, $block->getEntityType());
     }
     
-    public function keyValueSetProvider(): array
+    public static function keyValueSetProvider(): array
     {
         return [
             [EntityType::KEY],

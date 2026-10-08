@@ -16,13 +16,13 @@ use D9\Textract\Model\Geometry\BoundingBox;
 use D9\Textract\Model\Geometry\Geometry;
 use D9\Textract\Model\Geometry\Point;
 use D9\Textract\Model\Geometry\Polygon;
-use D9\Textract\Tests\AbstractBaseTest;
+use D9\Textract\Tests\AbstractTestCase;
 
 /**
  * @covers \D9\Textract\Factory\Block\CellFactory
  * @covers \D9\Textract\Factory\Block\AbstractBlockFactory
  */
-class CellFactoryTest extends AbstractBaseTest
+class CellFactoryTest extends AbstractTestCase
 {
     public function testBuild()
     {

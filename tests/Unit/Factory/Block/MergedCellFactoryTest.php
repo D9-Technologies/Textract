@@ -6,13 +6,13 @@ use Faker\Factory;
 use D9\Textract\Factory\Block\MergedCellFactory;
 use D9\Textract\Factory\Geometry\GeometryFactoryInterface;
 use D9\Textract\Model\Geometry\Geometry;
-use D9\Textract\Tests\AbstractBaseTest;
+use D9\Textract\Tests\AbstractTestCase;
 
 /**
  * @covers \D9\Textract\Factory\Block\MergedCellFactory
  * @covers \D9\Textract\Factory\Block\AbstractBlockFactory
  */
-class MergedCellFactoryTest extends AbstractBaseTest
+class MergedCellFactoryTest extends AbstractTestCase
 {
 
     public function testBuild()

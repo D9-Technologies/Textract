@@ -22,13 +22,13 @@ use D9\Textract\Model\Geometry\BoundingBox;
 use D9\Textract\Model\Geometry\Geometry;
 use D9\Textract\Model\Geometry\Point;
 use D9\Textract\Model\Geometry\Polygon;
-use D9\Textract\Tests\AbstractBaseTest;
+use D9\Textract\Tests\AbstractTestCase;
 
 /**
  * @covers \D9\Textract\Factory\Block\QueryFactory
  * @covers \D9\Textract\Factory\Block\AbstractBlockFactory
  */
-class QueryFactoryTest extends AbstractBaseTest
+class QueryFactoryTest extends AbstractTestCase
 {
 
     public function testBuild()

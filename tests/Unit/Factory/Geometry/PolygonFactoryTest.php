@@ -33,18 +33,13 @@ class PolygonFactoryTest extends TestCase
         }
 
         $pointFactoryMock = $this->createMock(PointFactoryInterface::class);
+        $call = 0;
         $pointFactoryMock->method('build')
-            ->withConsecutive(
-                ...array_map(
-                    function ($pointDataItem) {
-                        return [$pointDataItem];
-                    },
-                    $pointData
-                )
-            )
-            ->willReturnOnConsecutiveCalls(
-                ...$points
-            );
+            ->willReturnCallback(function (array $pointDataItem) use (&$call, $pointData, $points) {
+                $this->assertSame($pointData[$call], $pointDataItem);
+
+                return $points[$call++];
+            });
 
         $factory = new PolygonFactory($pointFactoryMock);
 

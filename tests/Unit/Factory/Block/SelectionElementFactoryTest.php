@@ -20,13 +20,13 @@ use D9\Textract\Model\Geometry\BoundingBox;
 use D9\Textract\Model\Geometry\Geometry;
 use D9\Textract\Model\Geometry\Point;
 use D9\Textract\Model\Geometry\Polygon;
-use D9\Textract\Tests\AbstractBaseTest;
+use D9\Textract\Tests\AbstractTestCase;
 
 /**
  * @covers \D9\Textract\Factory\Block\SelectionElementFactory
  * @covers \D9\Textract\Factory\Block\AbstractBlockFactory
  */
-class SelectionElementFactoryTest extends AbstractBaseTest
+class SelectionElementFactoryTest extends AbstractTestCase
 {
     /**
      * @param SelectionStatus $selectionStatus
@@ -69,7 +69,7 @@ class SelectionElementFactoryTest extends AbstractBaseTest
         $this->assertEquals($selectionStatus, $block->getSelectionStatus());
     }
     
-    public function selectionElementProvider(): array
+    public static function selectionElementProvider(): array
     {
         return [
             [SelectionStatus::SELECTED],

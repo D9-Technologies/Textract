@@ -87,37 +87,45 @@ class DocumentBuilderTest extends TestCase
         $wordMock = $this->createMock(Word::class);
         $wordMock->method('getId')->willReturn($wordId);
 
+        $expectedRelationshipTypes = [
+            RelationshipType::MERGED_CELL,
+            RelationshipType::VALUE,
+            RelationshipType::TITLE,
+            RelationshipType::CHILD,
+            RelationshipType::ANSWER,
+            RelationshipType::COMPLEX_FEATURES,
+        ];
+
+        $expectedChildren = $expectedRelationshipTypes;
         $pageMock->expects($this->exactly(6))
             ->method('addChild')
-            ->withConsecutive(
-                [RelationshipType::MERGED_CELL, $wordMock],
-                [RelationshipType::VALUE, $wordMock],
-                [RelationshipType::TITLE, $wordMock],
-                [RelationshipType::CHILD, $wordMock],
-                [RelationshipType::ANSWER, $wordMock],
-                [RelationshipType::COMPLEX_FEATURES, $wordMock],
-            );
+            ->willReturnCallback(function (RelationshipType $relationshipType, $block) use (&$expectedChildren, $wordMock) {
+                $this->assertSame(array_shift($expectedChildren), $relationshipType);
+                $this->assertSame($wordMock, $block);
+            });
 
+        $expectedParents = $expectedRelationshipTypes;
         $wordMock->expects($this->exactly(6))
             ->method('addParent')
-            ->withConsecutive(
-                [RelationshipType::MERGED_CELL, $pageMock],
-                [RelationshipType::VALUE, $pageMock],
-                [RelationshipType::TITLE, $pageMock],
-                [RelationshipType::CHILD, $pageMock],
-                [RelationshipType::ANSWER, $pageMock],
-                [RelationshipType::COMPLEX_FEATURES, $pageMock],
-            );
+            ->willReturnCallback(function (RelationshipType $relationshipType, $block) use (&$expectedParents, $pageMock) {
+                $this->assertSame(array_shift($expectedParents), $relationshipType);
+                $this->assertSame($pageMock, $block);
+            });
 
         $blockBuilderMock = $this->createMock(BlockBuilderInterface::class);
 
+        $expectedBuilds = [
+            [$pageBlockData, $pageMock],
+            [$wordBlockData, $wordMock],
+        ];
         $blockBuilderMock->expects($this->exactly(2))
             ->method('build')
-            ->withConsecutive([$pageBlockData], [$wordBlockData])
-            ->willReturnOnConsecutiveCalls(
-                $pageMock,
-                $wordMock
-            );
+            ->willReturnCallback(function (array $blockData) use (&$expectedBuilds) {
+                [$expectedBlockData, $block] = array_shift($expectedBuilds);
+                $this->assertSame($expectedBlockData, $blockData);
+
+                return $block;
+            });
 
         $dataArray = [
             'AnalyzeDocumentModelVersion' => $version,
@@ -137,7 +145,13 @@ class DocumentBuilderTest extends TestCase
 
     public function testBuildFromFixture()
     {
-        $data = file_get_contents(__DIR__ . '/../../Fixtures/w2.json');
+        $fixture = __DIR__ . '/../../Fixtures/w2.json';
+
+        if (!file_exists($fixture)) {
+            $this->markTestSkipped('Fixtures are not committed; add tests/Fixtures/w2.json to run this test.');
+        }
+
+        $data = file_get_contents($fixture);
         $dataArray = json_decode($data, true);
 
         $builder = new DocumentBuilder();

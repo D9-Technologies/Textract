@@ -3,6 +3,7 @@
 namespace D9\Textract\Tests\Unit\Model\Block;
 
 use Faker\Factory;
+use D9\Textract\Model\Block\BlockInterface;
 use D9\Textract\Model\Block\BlockType;
 use D9\Textract\Model\Block\Cell;
 use D9\Textract\Model\Block\RelationshipType;
@@ -12,7 +13,7 @@ use D9\Textract\Model\Geometry\Geometry;
  * @covers \D9\Textract\Model\Block\Cell
  * @covers \D9\Textract\Model\Block\AbstractBlock
  */
-class CellTest extends AbstractBlockTest
+class CellTest extends AbstractBlockTestCase
 {
     public function testGetters()
     {
@@ -65,8 +66,9 @@ class CellTest extends AbstractBlockTest
     /**
      * @dataProvider relationshipProvider
      */
-    public function testAddGetChild(RelationshipType $relationshipType, $childBlock)
+    public function testAddGetChild(RelationshipType $relationshipType)
     {
+        $childBlock = $this->createStub(BlockInterface::class);
         $faker = Factory::create();
 
         $cell = new Cell(
@@ -88,8 +90,9 @@ class CellTest extends AbstractBlockTest
     /**
      * @dataProvider relationshipProvider
      */
-    public function testAddGetParent(RelationshipType $relationshipType, $childBlock)
+    public function testAddGetParent(RelationshipType $relationshipType)
     {
+        $childBlock = $this->createStub(BlockInterface::class);
         $faker = Factory::create();
 
         $cell = new Cell(

@@ -5,9 +5,9 @@ namespace D9\Textract\Tests;
 use Faker\Factory;
 use PHPUnit\Framework\TestCase;
 
-abstract class AbstractBaseTest extends TestCase
+abstract class AbstractTestCase extends TestCase
 {
-    protected function createTestGeometryData(): array
+    protected static function createTestGeometryData(): array
     {
         $faker = Factory::create();
 
