@@ -1,10 +1,10 @@
 <?php
 
-namespace ZingStudios\Textract\Builder;
+namespace D9\Textract\Builder;
 
-use ZingStudios\Textract\Model\Block\Page;
-use ZingStudios\Textract\Model\Block\RelationshipType;
-use ZingStudios\Textract\Model\Document;
+use D9\Textract\Model\Block\Page;
+use D9\Textract\Model\Block\RelationshipType;
+use D9\Textract\Model\Document;
 
 class DocumentBuilder implements DocumentBuilderInterface
 {

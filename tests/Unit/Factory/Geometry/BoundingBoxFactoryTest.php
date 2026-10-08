@@ -1,13 +1,13 @@
 <?php
 
-namespace ZingStudios\Textract\Tests\Unit\Factory\Geometry;
+namespace D9\Textract\Tests\Unit\Factory\Geometry;
 
 use Faker\Factory;
 use PHPUnit\Framework\TestCase;
-use ZingStudios\Textract\Factory\Geometry\BoundingBoxFactory;
+use D9\Textract\Factory\Geometry\BoundingBoxFactory;
 
 /**
- * @covers \ZingStudios\Textract\Factory\Geometry\BoundingBoxFactory
+ * @covers \D9\Textract\Factory\Geometry\BoundingBoxFactory
  */
 class BoundingBoxFactoryTest extends TestCase
 {

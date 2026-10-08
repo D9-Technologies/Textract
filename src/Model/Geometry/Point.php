@@ -1,6 +1,6 @@
 <?php
 
-namespace ZingStudios\Textract\Model\Geometry;
+namespace D9\Textract\Model\Geometry;
 
 class Point
 {

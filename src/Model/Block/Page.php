@@ -1,6 +1,6 @@
 <?php
 
-namespace ZingStudios\Textract\Model\Block;
+namespace D9\Textract\Model\Block;
 
 
 

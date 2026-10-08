@@ -1,8 +1,8 @@
 <?php
 
-namespace ZingStudios\Textract\Factory\Block;
+namespace D9\Textract\Factory\Block;
 
-use ZingStudios\Textract\Model\Block\TableFooter;
+use D9\Textract\Model\Block\TableFooter;
 
 class TableFooterFactory extends AbstractBlockFactory implements TableFooterFactoryInterface
 {

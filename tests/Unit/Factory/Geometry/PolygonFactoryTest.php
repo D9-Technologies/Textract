@@ -1,16 +1,16 @@
 <?php
 
-namespace ZingStudios\Textract\Tests\Unit\Factory\Geometry;
+namespace D9\Textract\Tests\Unit\Factory\Geometry;
 
 use Faker\Factory;
 use PHPUnit\Framework\TestCase;
-use ZingStudios\Textract\Factory\Geometry\PointFactory;
-use ZingStudios\Textract\Factory\Geometry\PointFactoryInterface;
-use ZingStudios\Textract\Factory\Geometry\PolygonFactory;
-use ZingStudios\Textract\Model\Geometry\Point;
+use D9\Textract\Factory\Geometry\PointFactory;
+use D9\Textract\Factory\Geometry\PointFactoryInterface;
+use D9\Textract\Factory\Geometry\PolygonFactory;
+use D9\Textract\Model\Geometry\Point;
 
 /**
- * @covers \ZingStudios\Textract\Factory\Geometry\PolygonFactory
+ * @covers \D9\Textract\Factory\Geometry\PolygonFactory
  */
 class PolygonFactoryTest extends TestCase
 {
@@ -33,18 +33,13 @@ class PolygonFactoryTest extends TestCase
         }
 
         $pointFactoryMock = $this->createMock(PointFactoryInterface::class);
+        $call = 0;
         $pointFactoryMock->method('build')
-            ->withConsecutive(
-                ...array_map(
-                    function ($pointDataItem) {
-                        return [$pointDataItem];
-                    },
-                    $pointData
-                )
-            )
-            ->willReturnOnConsecutiveCalls(
-                ...$points
-            );
+            ->willReturnCallback(function (array $pointDataItem) use (&$call, $pointData, $points) {
+                $this->assertSame($pointData[$call], $pointDataItem);
+
+                return $points[$call++];
+            });
 
         $factory = new PolygonFactory($pointFactoryMock);
 

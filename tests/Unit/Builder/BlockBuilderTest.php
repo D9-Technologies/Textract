@@ -1,35 +1,35 @@
 <?php
 
-namespace ZingStudios\Textract\Tests\Unit\Builder;
+namespace D9\Textract\Tests\Unit\Builder;
 
 use Faker\Factory;
 use PHPUnit\Framework\TestCase;
-use ZingStudios\Textract\Builder\BlockBuilder;
-use ZingStudios\Textract\Factory\Block\BlockFactoryInterface;
-use ZingStudios\Textract\Factory\Block\CellFactoryInterface;
-use ZingStudios\Textract\Factory\Geometry\GeometryFactoryInterface;
-use ZingStudios\Textract\Model\Block\BlockInterface;
-use ZingStudios\Textract\Model\Block\BlockType;
-use ZingStudios\Textract\Model\Block\Cell;
-use ZingStudios\Textract\Model\Block\EntityType;
-use ZingStudios\Textract\Model\Block\KeyValueSet;
-use ZingStudios\Textract\Model\Block\Line;
-use ZingStudios\Textract\Model\Block\MergedCell;
-use ZingStudios\Textract\Model\Block\Page;
-use ZingStudios\Textract\Model\Block\Query;
-use ZingStudios\Textract\Model\Block\QueryResult;
-use ZingStudios\Textract\Model\Block\SelectionElement;
-use ZingStudios\Textract\Model\Block\SelectionStatus;
-use ZingStudios\Textract\Model\Block\Signature;
-use ZingStudios\Textract\Model\Block\Table;
-use ZingStudios\Textract\Model\Block\Word;
-use ZingStudios\Textract\Model\Geometry\Geometry;
-use ZingStudios\Textract\Tests\AbstractBaseTest;
+use D9\Textract\Builder\BlockBuilder;
+use D9\Textract\Factory\Block\BlockFactoryInterface;
+use D9\Textract\Factory\Block\CellFactoryInterface;
+use D9\Textract\Factory\Geometry\GeometryFactoryInterface;
+use D9\Textract\Model\Block\BlockInterface;
+use D9\Textract\Model\Block\BlockType;
+use D9\Textract\Model\Block\Cell;
+use D9\Textract\Model\Block\EntityType;
+use D9\Textract\Model\Block\KeyValueSet;
+use D9\Textract\Model\Block\Line;
+use D9\Textract\Model\Block\MergedCell;
+use D9\Textract\Model\Block\Page;
+use D9\Textract\Model\Block\Query;
+use D9\Textract\Model\Block\QueryResult;
+use D9\Textract\Model\Block\SelectionElement;
+use D9\Textract\Model\Block\SelectionStatus;
+use D9\Textract\Model\Block\Signature;
+use D9\Textract\Model\Block\Table;
+use D9\Textract\Model\Block\Word;
+use D9\Textract\Model\Geometry\Geometry;
+use D9\Textract\Tests\AbstractTestCase;
 
 /**
- * @covers \ZingStudios\Textract\Builder\BlockBuilder
+ * @covers \D9\Textract\Builder\BlockBuilder
  */
-class BlockBuilderTest extends AbstractBaseTest
+class BlockBuilderTest extends AbstractTestCase
 {
     /**
      * @dataProvider blockBuilderProvider
@@ -81,7 +81,7 @@ class BlockBuilderTest extends AbstractBaseTest
         $this->assertInstanceOf($expectedBlockClass, $block);
     }
 
-    public function blockBuilderProvider(): array
+    public static function blockBuilderProvider(): array
     {
         $faker = Factory::create();
 
@@ -92,7 +92,7 @@ class BlockBuilderTest extends AbstractBaseTest
                 [
                     'BlockType' => BlockType::PAGE->value,
                     'Id' => $faker->uuid(),
-                    'Geometry' => $this->createTestGeometryData(),
+                    'Geometry' => self::createTestGeometryData(),
                 ]
             ],
             [
@@ -101,7 +101,7 @@ class BlockBuilderTest extends AbstractBaseTest
                 [
                     'BlockType' => BlockType::LINE->value,
                     'Id' => $faker->uuid(),
-                    'Geometry' => $this->createTestGeometryData(),
+                    'Geometry' => self::createTestGeometryData(),
                     'Confidence' => $faker->randomFloat(),
                     'Text' => $faker->sentence(),
                 ]
@@ -112,7 +112,7 @@ class BlockBuilderTest extends AbstractBaseTest
                 [
                     'BlockType' => BlockType::WORD->value,
                     'Id' => $faker->uuid(),
-                    'Geometry' => $this->createTestGeometryData(),
+                    'Geometry' => self::createTestGeometryData(),
                     'Confidence' => $faker->randomFloat(),
                     'Text' => $faker->word(),
                 ]
@@ -123,7 +123,7 @@ class BlockBuilderTest extends AbstractBaseTest
                 [
                     'BlockType' => BlockType::TABLE->value,
                     'Id' => $faker->uuid(),
-                    'Geometry' => $this->createTestGeometryData(),
+                    'Geometry' => self::createTestGeometryData(),
                 ]
             ],
             [
@@ -132,7 +132,7 @@ class BlockBuilderTest extends AbstractBaseTest
                 [
                     'BlockType' => BlockType::CELL->value,
                     'Id' => $faker->uuid(),
-                    'Geometry' => $this->createTestGeometryData(),
+                    'Geometry' => self::createTestGeometryData(),
                     'Confidence' => $faker->randomFloat(),
                     'RowIndex' => $faker->randomNumber(),
                     'ColumnIndex' => $faker->randomNumber(),
@@ -146,7 +146,7 @@ class BlockBuilderTest extends AbstractBaseTest
                 [
                     'BlockType' => BlockType::KEY_VALUE_SET->value,
                     'Id' => $faker->uuid(),
-                    'Geometry' => $this->createTestGeometryData(),
+                    'Geometry' => self::createTestGeometryData(),
                     'Confidence' => $faker->randomFloat(),
                     'EntityTypes' => [EntityType::KEY->value]
                 ]
@@ -157,7 +157,7 @@ class BlockBuilderTest extends AbstractBaseTest
                 [
                     'BlockType' => BlockType::MERGED_CELL->value,
                     'Id' => $faker->uuid(),
-                    'Geometry' => $this->createTestGeometryData(),
+                    'Geometry' => self::createTestGeometryData(),
                 ]
             ],
             [
@@ -166,7 +166,7 @@ class BlockBuilderTest extends AbstractBaseTest
                 [
                     'BlockType' => BlockType::SELECTION_ELEMENT->value,
                     'Id' => $faker->uuid(),
-                    'Geometry' => $this->createTestGeometryData(),
+                    'Geometry' => self::createTestGeometryData(),
                     'Confidence' => $faker->randomFloat(),
                     'SelectionStatus' => SelectionStatus::SELECTED->value
                 ]
@@ -177,7 +177,7 @@ class BlockBuilderTest extends AbstractBaseTest
                 [
                     'BlockType' => BlockType::SIGNATURE->value,
                     'Id' => $faker->uuid(),
-                    'Geometry' => $this->createTestGeometryData(),
+                    'Geometry' => self::createTestGeometryData(),
                 ]
             ],
             [
@@ -186,7 +186,7 @@ class BlockBuilderTest extends AbstractBaseTest
                 [
                     'BlockType' => BlockType::QUERY->value,
                     'Id' => $faker->uuid(),
-                    'Geometry' => $this->createTestGeometryData(),
+                    'Geometry' => self::createTestGeometryData(),
                     'Query' => [
                         'Alias' => $faker->word(),
                         'Text' => $faker->sentence()
@@ -199,7 +199,7 @@ class BlockBuilderTest extends AbstractBaseTest
                 [
                     'BlockType' => BlockType::QUERY_RESULT->value,
                     'Id' => $faker->uuid(),
-                    'Geometry' => $this->createTestGeometryData(),
+                    'Geometry' => self::createTestGeometryData(),
                     'Text' => $faker->word(),
                 ]
             ],

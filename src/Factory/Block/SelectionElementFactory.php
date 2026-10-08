@@ -1,9 +1,9 @@
 <?php
 
-namespace ZingStudios\Textract\Factory\Block;
+namespace D9\Textract\Factory\Block;
 
-use ZingStudios\Textract\Model\Block\SelectionElement;
-use ZingStudios\Textract\Model\Block\SelectionStatus;
+use D9\Textract\Model\Block\SelectionElement;
+use D9\Textract\Model\Block\SelectionStatus;
 
 class SelectionElementFactory extends AbstractBlockFactory implements SelectionElementFactoryInterface
 {

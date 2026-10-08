@@ -1,18 +1,19 @@
 <?php
 
-namespace ZingStudios\Textract\Tests\Unit\Model\Block;
+namespace D9\Textract\Tests\Unit\Model\Block;
 
 use Faker\Factory;
-use ZingStudios\Textract\Model\Block\BlockType;
-use ZingStudios\Textract\Model\Block\Cell;
-use ZingStudios\Textract\Model\Block\RelationshipType;
-use ZingStudios\Textract\Model\Geometry\Geometry;
+use D9\Textract\Model\Block\BlockInterface;
+use D9\Textract\Model\Block\BlockType;
+use D9\Textract\Model\Block\Cell;
+use D9\Textract\Model\Block\RelationshipType;
+use D9\Textract\Model\Geometry\Geometry;
 
 /**
- * @covers \ZingStudios\Textract\Model\Block\Cell
- * @covers \ZingStudios\Textract\Model\Block\AbstractBlock
+ * @covers \D9\Textract\Model\Block\Cell
+ * @covers \D9\Textract\Model\Block\AbstractBlock
  */
-class CellTest extends AbstractBlockTest
+class CellTest extends AbstractBlockTestCase
 {
     public function testGetters()
     {
@@ -65,8 +66,9 @@ class CellTest extends AbstractBlockTest
     /**
      * @dataProvider relationshipProvider
      */
-    public function testAddGetChild(RelationshipType $relationshipType, $childBlock)
+    public function testAddGetChild(RelationshipType $relationshipType)
     {
+        $childBlock = $this->createStub(BlockInterface::class);
         $faker = Factory::create();
 
         $cell = new Cell(
@@ -88,8 +90,9 @@ class CellTest extends AbstractBlockTest
     /**
      * @dataProvider relationshipProvider
      */
-    public function testAddGetParent(RelationshipType $relationshipType, $childBlock)
+    public function testAddGetParent(RelationshipType $relationshipType)
     {
+        $childBlock = $this->createStub(BlockInterface::class);
         $faker = Factory::create();
 
         $cell = new Cell(

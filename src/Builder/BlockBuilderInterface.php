@@ -1,10 +1,10 @@
 <?php
 
-namespace ZingStudios\Textract\Builder;
+namespace D9\Textract\Builder;
 
-use ZingStudios\Textract\Factory\Block\BlockFactoryInterface;
-use ZingStudios\Textract\Model\Block\BlockInterface;
-use ZingStudios\Textract\Model\Block\BlockType;
+use D9\Textract\Factory\Block\BlockFactoryInterface;
+use D9\Textract\Model\Block\BlockInterface;
+use D9\Textract\Model\Block\BlockType;
 
 interface BlockBuilderInterface
 {

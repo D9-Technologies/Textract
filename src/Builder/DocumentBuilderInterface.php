@@ -1,8 +1,8 @@
 <?php
 
-namespace ZingStudios\Textract\Builder;
+namespace D9\Textract\Builder;
 
-use ZingStudios\Textract\Model\Document;
+use D9\Textract\Model\Document;
 
 interface DocumentBuilderInterface
 {

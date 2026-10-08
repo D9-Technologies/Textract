@@ -1,32 +1,32 @@
 <?php
 
-namespace ZingStudios\Textract\Tests\Unit\Factory\Block;
+namespace D9\Textract\Tests\Unit\Factory\Block;
 
 use Faker\Factory;
 use PHPUnit\Framework\TestCase;
-use ZingStudios\Textract\Factory\Block\CellFactory;
-use ZingStudios\Textract\Factory\Block\KeyValueSetFactory;
-use ZingStudios\Textract\Factory\Block\SelectionElementFactory;
-use ZingStudios\Textract\Factory\Geometry\BoundingBoxFactoryInterface;
-use ZingStudios\Textract\Factory\Geometry\GeometryFactory;
-use ZingStudios\Textract\Factory\Geometry\GeometryFactoryInterface;
-use ZingStudios\Textract\Factory\Geometry\PointFactory;
-use ZingStudios\Textract\Factory\Geometry\PointFactoryInterface;
-use ZingStudios\Textract\Factory\Geometry\PolygonFactory;
-use ZingStudios\Textract\Factory\Geometry\PolygonFactoryInterface;
-use ZingStudios\Textract\Model\Block\EntityType;
-use ZingStudios\Textract\Model\Block\SelectionStatus;
-use ZingStudios\Textract\Model\Geometry\BoundingBox;
-use ZingStudios\Textract\Model\Geometry\Geometry;
-use ZingStudios\Textract\Model\Geometry\Point;
-use ZingStudios\Textract\Model\Geometry\Polygon;
-use ZingStudios\Textract\Tests\AbstractBaseTest;
+use D9\Textract\Factory\Block\CellFactory;
+use D9\Textract\Factory\Block\KeyValueSetFactory;
+use D9\Textract\Factory\Block\SelectionElementFactory;
+use D9\Textract\Factory\Geometry\BoundingBoxFactoryInterface;
+use D9\Textract\Factory\Geometry\GeometryFactory;
+use D9\Textract\Factory\Geometry\GeometryFactoryInterface;
+use D9\Textract\Factory\Geometry\PointFactory;
+use D9\Textract\Factory\Geometry\PointFactoryInterface;
+use D9\Textract\Factory\Geometry\PolygonFactory;
+use D9\Textract\Factory\Geometry\PolygonFactoryInterface;
+use D9\Textract\Model\Block\EntityType;
+use D9\Textract\Model\Block\SelectionStatus;
+use D9\Textract\Model\Geometry\BoundingBox;
+use D9\Textract\Model\Geometry\Geometry;
+use D9\Textract\Model\Geometry\Point;
+use D9\Textract\Model\Geometry\Polygon;
+use D9\Textract\Tests\AbstractTestCase;
 
 /**
- * @covers \ZingStudios\Textract\Factory\Block\SelectionElementFactory
- * @covers \ZingStudios\Textract\Factory\Block\AbstractBlockFactory
+ * @covers \D9\Textract\Factory\Block\SelectionElementFactory
+ * @covers \D9\Textract\Factory\Block\AbstractBlockFactory
  */
-class SelectionElementFactoryTest extends AbstractBaseTest
+class SelectionElementFactoryTest extends AbstractTestCase
 {
     /**
      * @param SelectionStatus $selectionStatus
@@ -69,7 +69,7 @@ class SelectionElementFactoryTest extends AbstractBaseTest
         $this->assertEquals($selectionStatus, $block->getSelectionStatus());
     }
     
-    public function selectionElementProvider(): array
+    public static function selectionElementProvider(): array
     {
         return [
             [SelectionStatus::SELECTED],

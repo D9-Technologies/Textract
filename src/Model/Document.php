@@ -1,8 +1,8 @@
 <?php
 
-namespace ZingStudios\Textract\Model;
+namespace D9\Textract\Model;
 
-use ZingStudios\Textract\Model\Block\Page;
+use D9\Textract\Model\Block\Page;
 
 class Document
 {
